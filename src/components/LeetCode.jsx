@@ -6,8 +6,9 @@ const USERNAME = 'shaky_codes';
 const STATS_API_URL =
   `https://leetpulse-api.vercel.app/api/leetcode/solved/${USERNAME}`;
 
-const CALENDAR_API_URL =
-  `https://alfa-leetcode-api.onrender.com/${USERNAME}/calendar`;
+const calendarResponse = await fetch(
+  `/api/leetcode?username=shaky_codes&year=${new Date().getFullYear()}`
+);
 
 function getDateKeyFromTimestamp(timestamp) {
   const date = new Date(Number(timestamp) * 1000);
